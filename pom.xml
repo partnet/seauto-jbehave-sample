@@ -1,0 +1,122 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>seauto.sample</groupId>
+  <artifactId>seauto-sample</artifactId>
+  <version>0.9.0</version>
+  <properties>
+    <test.config.story.dir>${project.build.testOutputDirectory}</test.config.story.dir>
+    
+    <codehaus.properties-maven-plugin.version>1.0-alpha-2</codehaus.properties-maven-plugin.version>
+    <jbehave.jbehave-maven-plugin.version>3.9.5</jbehave.jbehave-maven-plugin.version>
+    <apache.maven-compiler-plugin.version>3.0</apache.maven-compiler-plugin.version>
+    
+  </properties>
+  <dependencies>
+    <dependency>
+      <groupId>com.partnet</groupId>
+      <artifactId>seauto-jbehave</artifactId>
+      <version>0.9.0</version>
+    </dependency>
+  </dependencies>
+  
+  <build>
+    <plugins>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-compiler-plugin</artifactId>
+        <version>${apache.maven-compiler-plugin.version}</version>
+        <inherited>true</inherited>
+        <configuration>
+          <source>1.7</source>
+          <target>1.7</target>
+        </configuration>
+      </plugin>
+      <!-- 
+        for setting system properties, used in the Test Configuration setup. 
+      -->
+      <plugin>
+        <groupId>org.codehaus.mojo</groupId>
+        <artifactId>properties-maven-plugin</artifactId>
+        <version>${codehaus.properties-maven-plugin.version}</version>
+        <executions>
+          <execution>
+            <id>set-properties-for-integration-test-phase</id>
+            <phase>integration-test</phase>
+            <goals>
+              <goal>set-system-properties</goal>
+            </goals>
+            <configuration>
+              <properties>
+                <property>
+                  <name>test.config.story.dir</name>
+                  <value>${test.config.story.dir}</value>
+                </property>
+              </properties>
+            </configuration>
+          </execution>
+        </executions>
+      </plugin>
+    
+      <!-- JBehave execution plugin -->
+      <plugin>
+        <groupId>org.jbehave</groupId>
+        <artifactId>jbehave-maven-plugin</artifactId>
+        <version>${jbehave.jbehave-maven-plugin.version}</version>
+        <executions>
+        <!-- 
+          <execution>
+            <id>map-stories</id>
+            <phase>integration-test</phase>
+            <configuration>
+              <scope>test</scope>
+               Need to say what directory the stories are in 
+              <testSourceDirectory>src/test/resources</testSourceDirectory>
+              <includes>
+                <include>**/*.story</include>
+              </includes>
+              <metaFilters>
+                <metaFilter>+skip</metaFilter>
+              </metaFilters>             
+            </configuration>
+            <goals>
+              <goal>map-stories-as-paths</goal>
+            </goals>
+          </execution>
+          -->
+          <execution>
+            <phase>integration-test</phase>
+            <configuration>
+              <scope>test</scope>
+              <ignoreFailureInStories>true</ignoreFailureInStories>
+              <ignoreFailureInView>false</ignoreFailureInView>
+              <includes>
+                <include>**/WeldAnnotatedStoryRunner.java</include>
+              </includes>
+              <!-- Styling for reports properties -->
+              <resourceArtifactIds>
+                <var>jbehave-core</var>
+                <var>jbehave-site-resources</var>
+              </resourceArtifactIds>
+              <resourceTypes>
+                <var>zip</var>
+                <var>jar</var>
+              </resourceTypes>
+              <resourceIncludes>**/*.css, **/*.png, **/*.js</resourceIncludes>
+            </configuration>
+            <goals>
+              <goal>unpack-view-resources</goal>
+              <goal>run-stories-with-annotated-embedder</goal>
+            </goals>
+          </execution>
+        </executions>
+        <dependencies>
+          <dependency>
+            <groupId>log4j</groupId>
+            <artifactId>log4j</artifactId>
+            <version>1.2.16</version>
+          </dependency>
+        </dependencies>
+      </plugin>
+    </plugins>
+  </build>
+</project>
