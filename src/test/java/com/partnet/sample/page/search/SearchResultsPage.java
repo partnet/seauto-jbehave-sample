@@ -1,6 +1,6 @@
 /* Copyright (c) 2014 Partnet, Inc. Confidential and Proprietary. */
 
-package seauto.sample.page.search;
+package com.partnet.sample.page.search;
 
 import java.util.HashMap;
 import java.util.List;

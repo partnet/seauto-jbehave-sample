@@ -1,6 +1,6 @@
 /* Copyright (c) 2014 Partnet, Inc. Confidential and Proprietary. */
 
-package seauto.sample.page.home;
+package com.partnet.sample.page.home;
 
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;

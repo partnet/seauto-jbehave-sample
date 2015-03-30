@@ -1,4 +1,4 @@
-package seauto.sample.config.selenium;
+package com.partnet.sample.config.selenium;
 /* Copyright (c) 2014 Partnet, Inc. Confidential and Proprietary. */
 
 

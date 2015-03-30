@@ -1,8 +1,8 @@
-package seauto.sample.config.framework;
+package com.partnet.sample.config.framework;
 import javax.inject.Inject;
 
-import seauto.sample.page.BingSite;
-import seauto.sample.page.BingSiteProvider;
+import com.partnet.sample.page.BingSite;
+import com.partnet.sample.page.BingSiteProvider;
 
 import com.partnet.automation.AbstractStoryContext;
 import com.partnet.automation.page.Page;

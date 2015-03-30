@@ -1,5 +1,5 @@
 // Copyright (C) 2014 Partnet, Inc. Confidential and Proprietary
-package seauto.sample.config.selenium;
+package com.partnet.sample.config.selenium;
 
 import javax.enterprise.inject.Produces;
 import javax.inject.Singleton;
