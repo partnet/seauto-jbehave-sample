@@ -1,5 +1,5 @@
 /* Copyright (c) 2014 Partnet, Inc. Confidential and Proprietary. */
-package seauto.sample.config.framework;
+package com.partnet.sample.config.framework;
 
 import javax.enterprise.inject.Produces;
 import javax.inject.Inject;

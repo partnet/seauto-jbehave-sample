@@ -1,5 +1,5 @@
 // Copyright (C) 2014 Partnet, Inc. Confidential and Proprietary
-package seauto.sample.config.jbehave;
+package com.partnet.sample.config.jbehave;
 
 import java.text.SimpleDateFormat;
 

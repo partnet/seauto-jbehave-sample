@@ -1,6 +1,6 @@
 /* Copyright (c) 2014 Partnet, Inc. Confidential and Proprietary. */
 
-package seauto.sample.step;
+package com.partnet.sample.step;
 
 
 import java.util.Map;
@@ -13,9 +13,9 @@ import org.jbehave.core.annotations.When;
 import org.jbehave.core.annotations.weld.WeldStep;
 import org.junit.Assert;
 
-import seauto.sample.config.framework.StoryContext;
-import seauto.sample.page.home.HomePage;
-import seauto.sample.page.search.SearchResultsPage;
+import com.partnet.sample.config.framework.StoryContext;
+import com.partnet.sample.page.home.HomePage;
+import com.partnet.sample.page.search.SearchResultsPage;
 
 /**
  * @author <a href="mailto:bbarker@part.net">bbarker</a>

@@ -1,5 +1,5 @@
 // Copyright (C) 2014 Partnet, Inc. Confidential and Proprietary
-package seauto.sample.config.jbehave;
+package com.partnet.sample.config.jbehave;
 
 import java.beans.PropertyChangeEvent;
 import java.beans.PropertyChangeListener;
@@ -26,6 +26,7 @@ import org.jbehave.core.annotations.weld.WeldStep;
 import org.jbehave.core.configuration.Configuration;
 import org.jbehave.core.failures.PendingStepFound;
 import org.jbehave.core.failures.UUIDExceptionWrapper;
+import org.jbehave.web.selenium.WebDriverProvider;
 import org.openqa.selenium.Cookie;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebDriverException;
@@ -37,15 +38,13 @@ import org.openqa.selenium.remote.RemoteWebDriver;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import seauto.sample.config.framework.StoryContext;
-import seauto.sample.config.framework.StoryContextProvider;
-import seauto.sample.config.selenium.ConfigurableDriverProvider;
-
 import com.partnet.automation.Browser;
-import com.partnet.automation.HtmlView;
 import com.partnet.automation.annotation.StoryScoped;
 import com.partnet.automation.selenium.AbstractConfigurableDriverProvider;
 import com.partnet.automation.selenium.DriverProvider;
+import com.partnet.sample.config.framework.StoryContext;
+import com.partnet.sample.config.framework.StoryContextProvider;
+import com.partnet.sample.config.selenium.ConfigurableDriverProvider;
 
 /**
  * Controls the management of resources that need to be handled before and after all the stories as well as
@@ -142,6 +141,14 @@ public class StoryLifecycleListener
   
   private void showAlwaysOnTopDialog(String title, String message)
   {
+    
+    /*
+    TODO: Mar 26, 2015 (bbarker) - this breaks on a mac. Be more specific on what 
+    is being called here.
+    
+    Frank suggested using this:
+    JOptionPane.showMessageDialog(null, "Pausing...");
+    */
     final JOptionPane optionPane = new JOptionPane(message, JOptionPane.INFORMATION_MESSAGE, JOptionPane.DEFAULT_OPTION);
 
     final JDialog dialog = new JDialog(new JFrame(), title, true);

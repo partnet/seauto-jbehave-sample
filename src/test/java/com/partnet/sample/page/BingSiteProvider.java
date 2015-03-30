@@ -1,6 +1,6 @@
 /* Copyright (c) 2014 Partnet, Inc. Confidential and Proprietary. */
 
-package seauto.sample.page;
+package com.partnet.sample.page;
 
 import javax.inject.Inject;
 import javax.inject.Singleton;
