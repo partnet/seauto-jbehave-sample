@@ -2,7 +2,29 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.partnet.sample</groupId>
   <artifactId>seauto-jbehave-sample</artifactId>
-  <version>0.9.0</version>
+  <version>0.9.1</version>
+
+  <name>SeAuto-JBehave-Sample</name>
+
+  <description>Sample project for SeAuto: a bridge to Selenium from your favorite test framework.</description>
+  <url>https://github.com/partnet/seauto-jbehave-sample</url>
+  <scm>
+    <url>https://github.com/partnet/seauto-jbehave-sample.git</url>
+  </scm>
+
+  <licenses>
+    <license>
+      <name>Licensed under the Apache License, Version 2.0</name>
+      <url>http://www.apache.org/licenses/LICENSE-2.0</url>
+    </license>
+  </licenses>
+
+  <developers>
+    <developer>
+      <name />
+    </developer>
+  </developers>
+
   <properties>
     <test.config.story.dir>${project.build.testOutputDirectory}</test.config.story.dir>
     
@@ -15,7 +37,7 @@
     <dependency>
       <groupId>com.partnet</groupId>
       <artifactId>seauto-jbehave</artifactId>
-      <version>0.9.0</version>
+      <version>0.9.1</version>
     </dependency>
   </dependencies>
   
